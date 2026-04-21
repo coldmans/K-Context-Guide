@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: k-context-guide-api
+  servlet:
+    multipart:
+      max-file-size: 25MB
+      max-request-size: 35MB
+
+server:
+  port: ${SERVER_PORT:8080}
+
+kanana:
+  api-key: ${KANANA_API_KEY:}
+  base-url: ${KANANA_BASE_URL:https://kanana-o.a2s-endpoint.kr-central-2.kakaocloud.com/v1}
+  model: ${KANANA_MODEL:kanana-o}
+  demo-mode: ${KANANA_DEMO_MODE:false}
+  output-voice: ${KANANA_OUTPUT_VOICE:preset_spk_1}
+
+app:
+  cors:
+    allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:3000,http://127.0.0.1:3000}

@@ -1,0 +1,8 @@
+.idea/
+.env
+.env.*
+!.env.example
+backend/target/
+frontend/.next/
+frontend/node_modules/
+.DS_Store
