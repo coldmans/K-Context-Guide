@@ -2,6 +2,23 @@
 
 사진과 목소리만으로 한국 생활 속 장면을 이해하고 설명해주는 카나나 기반 멀티모달 웹 데모입니다.
 
+## Portfolio Highlights
+
+- 이미지, 브라우저 WAV 녹음, 텍스트 질문을 함께 받아 한국 생활 맥락을 설명하는 멀티모달 데모입니다.
+- Spring Boot 백엔드가 API 키와 모델 호출을 담당하고, Next.js 프론트는 `/backend/*` 프록시 경로로만 통신하도록 구성했습니다.
+- Kanana OpenAI-compatible endpoint에 이미지/audio/text payload를 전달하고, streaming text/audio delta를 수집해 WAV 응답으로 정리합니다.
+- API 키가 없거나 외부 호출이 실패해도 fallback 응답으로 UI 흐름을 유지하도록 설계했습니다.
+- `docker-compose.yml`로 홈서버에서 프론트/백엔드를 함께 띄울 수 있게 구성했습니다.
+
+## My Role
+
+- Next.js 16 App Router 기반 analyzer UI 구현
+- 브라우저 오디오를 WAV로 녹음하는 프론트엔드 유틸 구현
+- Spring Boot `POST /api/analyze` multipart API 구현
+- Kanana OpenAI-compatible streaming response parsing
+- PCM audio chunk를 WAV로 합치는 backend utility 구현
+- Docker Compose 기반 로컬/홈서버 실행 구성
+
 ## 구성
 - `frontend`: Next.js 16 App Router 기반 데모 웹
 - `backend`: Spring Boot API 서버
